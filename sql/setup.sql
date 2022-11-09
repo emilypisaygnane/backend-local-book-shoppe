@@ -11,7 +11,7 @@ CREATE TABLE authors (
 INSERT INTO
   authors (first_name, last_name)
 VALUES
-  ('Tessa', 'Bailey',
+  ('Tessa', 'Bailey'),
   ('Brianna', 'Wiest'), 
   ('Colleen', 'Hoover'),
   ('Siri', 'Pettersen'),
@@ -21,9 +21,9 @@ VALUES
 DROP TABLE IF EXISTS books;
 
 CREATE TABLE books (
- id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
- title VARCHAR NOT NULL,
- genre VARCHAR NOT NULL
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  title VARCHAR NOT NULL,
+  genre VARCHAR NOT NULL
 );
 
 INSERT INTO 
