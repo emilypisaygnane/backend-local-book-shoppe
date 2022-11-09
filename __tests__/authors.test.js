@@ -11,27 +11,26 @@ describe('author routes', () => {
   it('/authors should return list of all authors in shoppe', async () => {
     const res = await request(app).get('/authors');
     expect(res.status).toBe(200);
-    expect(res.body.length).toBe(6);
+    expect(res.body.length).toBe(5);
     expect(res.body[0]).toEqual({
       id: expect.any(String),
-      first_name: expect.any(String),
-      last_name: expect.any(String),
+      name: expect.any(String),
     });
   });
 
-  it('/authors/:id should return author detail and their books', async () => {
+  it.skip('GET /authors:id should return author detail and their books', async () => {
     const res = await request(app).get('/authors/1');
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
       id: expect.any(String),
-      first_name: expect.any(String),
-      last_name: expect.any(String),
-      total_books: expect.any(String),
+      name: expect.any(String),
+      dob: expect.any(String),
+      pob: expect.any(String),
       books: [
         {
           id: expect.any(String),
           title: expect.any(String),
-          genre: expect.any(String),
+          released: expect.any(Number),
         },
       ],
     });
