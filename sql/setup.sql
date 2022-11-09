@@ -6,24 +6,25 @@ CREATE TABLE authors (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   first_name VARCHAR NOT NULL,
   last_name VARCHAR NOT NULL,
+  total_books INT NOT NULL
 );
 
 INSERT INTO
-  authors (first_name, last_name)
+  authors (first_name, last_name, total_books)
 VALUES
-  ('Tessa', 'Bailey'),
-  ('Brianna', 'Wiest'), 
-  ('Colleen', 'Hoover'),
-  ('Siri', 'Pettersen'),
-  ('Christina', 'Lauren'),
-  ('Kevin', 'Kwan');
+  ('Tessa', 'Bailey', 52),
+  ('Brianna', 'Wiest', 6), 
+  ('Colleen', 'Hoover', 22),
+  ('Siri', 'Pettersen', 4),
+  ('Christina', 'Lauren', 29),
+  ('Kevin', 'Kwan', 4);
 
 DROP TABLE IF EXISTS books;
 
 CREATE TABLE books (
-  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  title VARCHAR NOT NULL,
-  genre VARCHAR NOT NULL
+ id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+ title VARCHAR NOT NULL,
+ genre VARCHAR NOT NULL
 );
 
 INSERT INTO 
