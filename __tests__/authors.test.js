@@ -18,7 +18,7 @@ describe('author routes', () => {
     });
   });
 
-  it.skip('GET /authors:id should return author detail and their books', async () => {
+  it('GET /authors:id should return author detail and their books', async () => {
     const res = await request(app).get('/authors/1');
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
