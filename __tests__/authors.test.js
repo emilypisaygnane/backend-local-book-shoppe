@@ -18,7 +18,7 @@ describe('author routes', () => {
     });
   });
 
-  it('GET /authors:id should return author detail and their books', async () => {
+  it('GET /authors/:id should return author detail and their books', async () => {
     const res = await request(app).get('/authors/1');
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
@@ -26,13 +26,12 @@ describe('author routes', () => {
       name: expect.any(String),
       dob: expect.any(String),
       pob: expect.any(String),
-      books: [
-        {
-          id: expect.any(String),
-          title: expect.any(String),
-          released: expect.any(Number),
-        },
-      ],
+      books: expect.any(Array),
+    });
+    expect(res.body.books[0]).toEqual({
+      id: expect.any(Number),
+      title: expect.any(String),
+      released: expect.any(Number),
     });
   });
 
